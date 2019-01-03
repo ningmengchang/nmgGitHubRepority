@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/ningm/Desktop/jar包/dom4j/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ningm/Desktop/jar包/dom4j/jaxen-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ningm/Desktop/jar包/dom4j/slf4j-api-1.5.8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ningm/Desktop/testjar/json-lib-2.2.2-jdk15.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ningm/Desktop/jar包/quartz/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ningm/Desktop/jar包/quartz/slf4j-log4j12-1.5.8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ningm/Desktop/jar包/quartz/quartz-2.3.0.jar" sourcepath="C:/Users/ningm/AppData/Local/Temp/.org.sf.feeling.decompiler1540370729417/source/quartz-2.3.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ningm/Desktop/jar包/redis/jedis-2.9.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ningm/Desktop/jar包/memcached/spymemcached-2.10.3.jar" sourcepath="C:/Users/ningm/AppData/Local/Temp/.org.sf.feeling.decompiler1537267099208/source/spymemcached-2.10.3-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ningm/Desktop/jar包/dom4j/junit-4.1.jar" sourcepath="C:/Users/ningm/AppData/Local/Temp/.org.sf.feeling.decompiler1535935484619/source/junit-4.1-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ningm/Desktop/jar包/发送邮件/mail.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ningm/Desktop/jar包/commons-pool2-2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ningm/Desktop/jar包/cglib/cglib-2.2.jar" sourcepath="C:/Users/ningm/AppData/Local/Temp/.org.sf.feeling.decompiler1544234009181/source/cglib-2.2-sources-1544234023782.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ningm/Desktop/jar包/cglib/asm-3.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ningm/Desktop/jar包/导出/poi-ooxml-3.7-20101029.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ningm/Desktop/jar包/导出/poi-3.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ningm/Desktop/jar包/导出/xmlbeans-2.3.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ningm/Desktop/jar包/导出/poi-ooxml-schemas-3.9.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_181"/>
+	<classpathentry kind="lib" path="C:/Users/ningm/Desktop/jar包/guava/guava-18.0.jar" sourcepath="C:/Users/ningm/AppData/Local/Temp/.org.sf.feeling.decompiler1545199245999/source/guava-18.0-sources.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

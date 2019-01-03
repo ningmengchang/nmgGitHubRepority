@@ -1,0 +1,103 @@
+1.更改server的设置，例如，启动时间，内存大小。
+2.注释掉项目的web.xml的单点登录(CAS)，某些filter过滤器。具体的可以见resweb的web.xml。web里面有servlet和filter等
+3.更改项目的设置，validation的设置问题。
+4.设置server的server.xml文件，改正<context> 的内容,可以设置更改代码是否重启服务器的问题。reloadable="false"  crossContext="true"
+5.更改eclipse的project的设置，让eclipse可以自动build，
+6.项目的java Bulid Path里面有编译输出的设置路径。
+7.application.xml里面有bean的配置，
+8.注意更改项目的pom.xml的设置，某些代码需要注释掉。去掉某些依赖，这里会有提示让去掉哪里的依赖
+9.spring框架的某些配置信息在application中，例如有beanfactoy的配置。
+更新mavenjar包，framework包
+10.web.xml里面有servlet的配置，filter，listener等
+11.兼容性模式设置，eclipse清理，自动构建，删除缓存。
+不是maven项目的话，需要新建动态web项目。Tomcat下lib里面的jar包很重要，少了的话，部署项目会出错，国际项目部署的时候需要删除两个包，替换两个包，详细内容见小本本。
+12.debug 模式f8单步跳过。浏览器调试js的时候一定要触发标记有debugger的这个界面。一般做法是浏览器打开所要调式的界面，然后打上debugger，进入f12，刷新界面跳转到
+debugger处。f7会退到此断点的调用出，用来做回退路径最好。用的最多的还是f8。
+13.flashbuilder4.5调试，当出现flash player版本不合适的时候记得替换D:\Program Files\Adobe\Adobe Flash Builder 4.7 (64 Bit)\player\win\11.4\FlashPlayerDebugger.exe，下载一个flash player debugger sa版本重命名为FlashPlayerDebugger.exe。
+14.删除注册表文件遇到不可以删除的问题的时候记得修改权限删除，如果遇到不可以修改权限记得把当前所属者改为administrators。然后在修改权限
+15.不要乱卸载flash player，window10 内置了flash player，卸载了flash player ie和medge无法看视频，但是
+360和chrome正常工作，初步怀疑是360也内置了flash player，更别提chrome了。漏洞修复重装了flash player。chrome和ie 不是一个体系的浏览器，flash player也不一样。
+16.chrome的默认打开新标签的方法按着鼠标的滑轮打开新的链接。
+17.window7ie11降级，找到程序卸载里面ie11补丁，卸载ie11.重启。
+18.360浏览器的flash player版本好像是chrome的
+19.缺少maven depencency的情况下只需要将工程切换到java视图就好。不同工程可以配置不同的maven 仓库，只需要提供本地仓库下的setting.xml文件。
+将其localRepository配置到指定位置。settting的mirror标签记得配置好，公司的就是这个<mirror> <id>nexus</id> <url>http://10.45.53.177:8081/nexus/content/groups/public</url>  <!--<url>http://58.213.47.69:17001/nexus/content/groups/public</url> -->
+ <mirrorOf>*</mirrorOf> </mirror>
+20.在安装好maven的基础之上。maven配置本地仓库，只需要修改安装目录下的setting.xml和指定本地仓库父目录下的setting.xml.到eclipse设置里面控制setting的加载。
+。
+21.输出流换行在string后面加上+"\r\n";输出流一般有字节输出和字符输出，字节输出byte[]处理网页输出的时候有问题。
+22.解析网页中出现的乱码问题，用Apache包的StringEscapeUtils.unescapeHtml()处理。
+23.unicode用2个字节表示一个字符，utf-8用3个字节表示一个字符。utf-8是用来节省unicode空间设计的一个字符传送格式。https://www.zhihu.com/question/23374078
+24.BigDecimal作除法的时候碰到除不尽的情况需要指定结果取到小数点后几位，否则抛出异常。
+修改js页面不必重启服务器，
+25.更新maven包的问题，右键项目maven-update project 先更新，在提交
+26.<Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" maxActive="100" maxIdle="30" maxWait="10000" name="jdbc/ResTxDataSource" password="rimdb" type="javax.sql.DataSource" url="jdbc:oracle:thin:@10.45.53.189:1521:orcl" username="rimdb"/>
+name 根据工程里的spring配置选择不是随便选择的。
+27.-Xms256M -Xmx1024M -XX:PermSize=256M -XX:MaxNewSize=512m -XX:MaxPermSize=521m eclipse更改内存大小
+Tomcat更改内存大小JAVA_OPTS=-Xms256m -Xmx512m
+28.调用存量接口的意思是，调用服务器上部署的项目的代码，一般的形式是//http://10.45.53.4:18080/ressearch/search.spr?method=XXX&参数=XXX。返回值采用HttpResponse接收到，一般的数据格式为Json，或者Map，通过解析加载到本地前台。
+29.jndi数据源和jdbc数据源的区别的感觉上是没有区别的，数据源的配置文件位置在resource/conf/spring/下面。一般的本机测试的时候用的是jdbc数据源
+30.单点登录不要注释掉，将最后的映射改为127.0.0.1:8080自己的电脑的位置。这种情况是可以通过flash builder调试，如果单点页面打不开，请替换单点的网址。详情见国际项目的搭建。国际的web里面的没有按照此操作，就一样可以flash builder调试，原因尚未知，研究之后解决。
+因为有些项目没有配置单点，这个调试方法修改，注释掉resMasterConf.properties 的sso.server.host,同时注释掉web的单点部分。原因未知
+31.修改js,和java代码可以通过刷新界面得到执行。修改html代码，修改jsp中的java代码需要重新部署。
+32.很多的vpn安装的时候需要关掉360和防火墙，使用的时候不用  
+33. jdbc数据源和jndi数据源，jdbc数据源是本机调试的时候用的。jndi数据源需要配置context的数据源。<property name="jndiName" value="java:comp/env/jdbc/ResTxDataSource" />
+34.双开，对于配置了同一个Tomcat的项目，可以是实现双开，或者是多开。只需要修改对应的server的三个端口的值不同就行了。补充的eclipse支持new window，可以打开多个窗口，但是不会保存。
+35.当打断点的项目和Tomcat运行的项目有差差异的时候，会出现断点打不上的问题。clean 双清一下
+36. 记得在resmester.properties文件里面把 sso关掉，把cache关掉
+37.国际的webservice接口调试的时候，会有jar问题，记得添加jar包，xercesImpl-2.8.0.jar
+38.ie不显示地址栏，安全设置自定义级别，允许网站打开没有地址或状态栏的窗口。
+39.eclipse设置文件关联，class和class without source的打开方式
+40.编程式事务的处理，transactionManager事务管理器或者是transactionTemplate事务模板都是可以处理的，因为transactionTemplate的有一个属性需要配置transactionManager。不同的模版hibernate或者mybatis不同的transactionManager不一样
+
+
+学习：
+1.xmlhttprequest可以实现ajax的功能，可以用来实现局部刷新，同步异步，回调等ajax的功能
+2.web-inf目录下面的jsp页面是不允许使用，redirec方式跳转的，但是可以通过forward方式跳转，https://blog.csdn.net/cai_eternal/article/details/53344183
+3.
+
+
+
+
+js是前台逻辑，控制着dx组件和jsp中的组件，这里一般会有大量的函数。数据请求也是通过js文件，一般返回到controller层某一个函数，然后调用service层，最后调用dao层。sql语句可以写在xml文件中，也可以写在string中。
+jquery.post()请求数据的方式
+loadxml()是dx的数据加载的方式
+$.ajax({
+  type: 'POST',
+  url: url,
+  data: data,
+  success: success,
+  dataType: dataType
+});
+ajax方式的加载后台数据的方法：创建项目XMLHttpRequest对象。使用XMLHttpRequest对象的open方法，
+
+js的调试可以通过debugger设置断点，java的调试用的是eclipse的debug模式。debug可以得到变量的值信息。
+
+动态查询的问题
+
+第一个单子修改的是前台逻辑js，实现的功能是更改Como的值。
+第二个单子涉及到了sql的优化，exists和in的效率问题。然后给grid添加了分页功能。trsCityBusiManager.js，见function queryFreeChannelUrl(resId);
+第三个单子根据登录用户的id对应的区域地址，限制查询对应的区域。涉及到了动态查询。
+
+界面的跳转是根据SrvBusinessController.java的method=srvManualForGom中的jsonpara参数解析出来的url跳转的。
+json的用法：
+String jsonparm=[{name1:{name2:{name3:'value1',name4:'value2'}}},{}];
+JSONArray getJsonArray=JSONArray.fromObject(arrayStr);
+JSONObject getJsonObj = getJsonArray.getJSONObject(0);//获取json数组中的第一项  
+String result=getJsonObj.getJSONObject("name1").getJSONObject("name2").getJSONObject("name4"); 
+
+
+http://localhost:8080/resweb/resservice/resService.spr?method=srvManualForGom 光路请求界面，联通通用版本，传输电路
+jsonpara = "{\"SysParam\":{\"srvMode\":\"2\",\"orderType\":\"1\",\"fromWebSrvIp\":\"http://localhost:8090/EOMS\"},\"BizParam\":[{\"orderId\":\"1022306\",\"actType\":\"101\",\"prodId\":\"6384855\",\"parentOrderId\":\"1063536\",\"srvId\":\"11010002\",\"woId\":\"149150346\",\"recordId\":\"1047963\",\"productType\": \"880100001\",\"orderLevel\": \"1003\"}]}";//光路请求界面入参
+jsonpara = "{\"SysParam\":{\"srvMode\":\"2\",\"orderType\":\"1\",\"fromWebSrvIp\":\"http://localhost:8090/EOMS\"},\"BizParam\":[{\"orderId\":\"1019777\",\"actType\":\"101\",\"prodId\":\"1004886\",\"srvId\":\"11010001\",\"woId\":\"1003156121\",\"mainOrderId\":\"1021668\",\"recordId\":\"1017238\",\"productType\": \"880100009\",\"orderLevel\": \"1002\"}]}";//传输界面入参
+
+入参从数据库里面
+v_gom_order_info
+srv_instance
+order  wo 149150346
+prod 
+
+dx分页功能参考/henanliantong/src/main/webapp/js/resservice/linkline/trsCityBusiManager.js下的function queryFreeChannelUrl(resId){}
+
+idea激活
+http://idea.congm.in
